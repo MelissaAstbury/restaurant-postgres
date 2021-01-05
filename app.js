@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 
-const restaurantRoutes = require('./routes/restaurant');
+const areasRoutes = require('./routes/areas');
 
 app.use(express.json());
 
-app.use('/api/restaurants', restaurantRoutes);
+app.use('/api/areas', areasRoutes);
 
 module.exports = app;

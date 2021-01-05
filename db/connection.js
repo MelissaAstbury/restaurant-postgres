@@ -5,3 +5,5 @@ const client = new Client(dbConfig);
 client.connect().then(() => {
   console.log(`Connected to ${dbConfig.database}`);
 });
+
+module.exports = client;
