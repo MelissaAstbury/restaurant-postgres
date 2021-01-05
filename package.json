@@ -1,0 +1,22 @@
+{
+  "name": "postgres-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon listen.js",
+    "seed": "psql -f db/seed.sql"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "supertest": "^6.0.1"
+  }
+}
