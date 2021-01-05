@@ -16,4 +16,43 @@ describe('/api', () => {
         });
     });
   });
+
+  describe('/restaurants', () => {
+    test('GET - status 200 - returns all restaurants', () => {
+      return request(app)
+        .get('/api/restaurants')
+        .expect(200)
+        .then((response) => {
+          expect(response.body.restaurants.length).toBe(3);
+          expect(response.body.restaurants[0]).toEqual({
+            restaurant_id: 1,
+            name: 'Chunky Chicken',
+            area_id: 1,
+            cuisine: 'Chicken',
+          });
+        });
+    });
+  });
+
+  describe('/comments', () => {
+    test('GET - status 200 - returns all comments', () => {
+      return request(app)
+        .get('/api/comments')
+        .expect(200)
+        .then((response) => {
+          expect(response.body.comments.length).toBe(4);
+        });
+    });
+  });
+
+  describe('/ratings', () => {
+    test('GET - status 200 - returns all ratings', () => {
+      return request(app)
+        .get('/api/ratings')
+        .expect(200)
+        .then((response) => {
+          expect(response.body.ratings.length).toBe(4);
+        });
+    });
+  });
 });
