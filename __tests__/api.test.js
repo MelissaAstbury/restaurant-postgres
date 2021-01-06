@@ -15,6 +15,20 @@ describe('/api', () => {
           });
         });
     });
+    test('POST - status 201 - returns succesful message', () => {
+      return request(app)
+        .post('/api/areas')
+        .send({
+          area_name: 'Surrey',
+        })
+        .expect(201)
+        .then(({ body: { area } }) => {
+          expect(area).toEqual({
+            area_id: 8,
+            area_name: 'Surrey',
+          });
+        });
+    });
   });
 
   describe('/restaurants', () => {
